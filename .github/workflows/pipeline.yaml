@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@ # modelo pre contruisdo do github
+        uses: actions/checkout@v5 # modelo pre contruisdo do github
 
       - name: Set up Node.js 
         uses: actions/setup-node@v3
