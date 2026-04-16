@@ -1,0 +1,29 @@
+#primeiramnete declarar o nome do workflow
+name: CI Pipeline
+
+# defenir o evento de ativaçao que o github deve iniciar esse pipeline
+on:
+  push:
+    branches: [ main ]
+  
+# agora devo defenir os jobs, q eh um conjunto de etapas que sao exacutadas.
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@ # modelo pre contruisdo do github
+
+      - name: Set up Node.js 
+        uses: actions/setup-node@v3
+        with: 
+          node-version: 16
+        
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Run tests
+        run: npm test
+
+      
